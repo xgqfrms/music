@@ -1,0 +1,9 @@
+#EXTM3U
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1800000
+/ldncctvwbcd/cdrmldcctv1_1td.m3u8?is_raw_rate=1&lhs_offset_unix_s_0=30313
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1350000
+/ldncctvwbcd/cdrmldcctv1_1ud.m3u8?is_raw_rate=1&lhs_offset_unix_s_0=30313
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=900000
+/ldncctvwbcd/cdrmldcctv1_1hd.m3u8?is_raw_rate=1&lhs_offset_unix_s_0=30313
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=600000
+/ldncctvwbcd/cdrmldcctv1_1md.m3u8?is_raw_rate=1&lhs_offset_unix_s_0=30313
