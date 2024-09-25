@@ -2,7 +2,7 @@
 
 > CCTV m3u8 video downloader
 
-## demo & try ❓
+## demo & try ❌
 
 > 使用 vscode emmet 构造索引为 01 ～ 100 的 ts 视频片段，默认只有 4 个 ts 视频片段！
 
@@ -76,6 +76,11 @@ https://github.com/xgqfrms/music/blob/main/docs/m3u8/cctv1_1td.m3u8
 https://music.xgqfrms.xyz/m3u8/cctv1_1td.m3u8
 
 
+## error
+
+https://blog.luckly-mjw.cn/tool-show/m3u8-downloader/index.html?source=https://music.xgqfrms.xyz/m3u8/cctv1_1td.m3u8
+
+![image](https://github.com/user-attachments/assets/e9e98305-45bb-4957-981e-6adb29f1ef8e)
 
 
 
