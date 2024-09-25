@@ -35,6 +35,9 @@ https://www.cnblogs.com/xgqfrms/p/18357977#5304062
 
 原始 m3u8 文件
 
+
+https://ldncctvwbcdali.v.myalicdn.com/ldncctvwbcd/cdrmldcctv1_1td.m3u8?is_raw_rate=1&lhs_offset_unix_s_0=30028
+
 ```ts
 #EXTM3U
 #EXT-X-VERSION:3
@@ -79,3 +82,7 @@ https://music.xgqfrms.xyz/m3u8/cctv1_1td.m3u8
 ## refs
 
 https://www.cnblogs.com/xgqfrms/p/18357977
+
+
+
+https://ldncctvwbcdali.v.myalicdn.com/ldncctvwbcd/cdrmldcctv1_1/index.m3u8?b=200-2100&begintimeabs=1727236855000
