@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="xgqfrms">
+    <meta name="generator" content="VS code">
+    <title>全斗焕小曲 / shake and sway.mp3</title>
+</head>
+<body>
+    <header>
+        <h1>全斗焕小曲 / shake and sway.mp3</h1>
+    </header>
+    <main>
+        <article>
+          <figure>
+            <figcaption>全斗焕小曲 / shake and sway.mp3</figcaption>
+            <audio
+              id="app"
+              controls
+              autoplay
+              loop
+              controlslist="nodownload"
+              src="./shake%20and%20sway.mp3">
+              <source src="./shake%20and%20sway.mp3" type="audio/mp3">
+                Your browser does not support the  <code>audio</code> element.
+            </audio>
+          </figure>
+          <!-- <iframe src="https://music.xgqfrms.xyz/the-most-beautiful-expectation/the-most-beautiful-expectation.mp3" type="audio/mp3" allow="autoplay" id="audio" style="display:none"></iframe> -->
+          <!-- <iframe src="https://music.xgqfrms.xyz/the-most-beautiful-expectation/index.html" type="audio/mp3" allow="autoplay" id="audio"></iframe> -->
+          <!-- <iframe src="https://music.xgqfrms.xyz/the-most-beautiful-expectation/the-most-beautiful-expectation.mp3" type="audio/mp3" allow="autoplay" id="audio"></iframe> -->
+          <!-- 
+            <figure>
+            <figcaption>the-most-beautiful-expectation.mp3</figcaption>
+            <audio
+              id="app"
+              controls
+              autoplay
+              loop
+              controlslist="nodownload"
+              src="https://music.xgqfrms.xyz/the-most-beautiful-expectation/the-most-beautiful-expectation.mp3">
+              <source src="https://music.xgqfrms.xyz/the-most-beautiful-expectation/the-most-beautiful-expectation.mp3" type="audio/mp3">
+                Your browser does not support the  <code>audio</code> element.
+            </audio>
+          </figure>
+          -->
+        </article>
+    </main>
+    <footer>
+        <p>copyright&copy; xgqfrms 2022</p>
+    </footer>
+    <script>
+      // js auto click play  => fix: Chrome Browser 🔐 autoplay with sound limit
+      // ❌
+      // window.addEventListener('DOMContentLoaded', (event) => {
+      //   console.log('DOM fully loaded and parsed');
+      //   setTimeout(() => {
+      //     // hack => fix: Uncaught (in promise) DOMException: play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD
+      //     // document.body.click();
+      //     const app = document.querySelector(`#app`);
+      //     if(app) {
+      //       app.click();
+      //       app.play();
+      //     }
+      //   }, 0);
+      // });
+      // ❌
+      // window.onload = function() {
+      //   var context = new AudioContext();
+      //   const app = document.querySelector(`#app`);
+      //   if(app) {
+      //     app.click();
+      //     app.play();
+      //   }
+      // }
+    </script>
+</body>
+</html>
