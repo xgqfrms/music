@@ -54,6 +54,18 @@ const getMusicFileName = () => {
 
 document.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM fully loaded and parsed ✅");
-  getMusicFileName();
+  const btn = document.querySelector(`#btn`);
+  // fix auto play limit
+  btn.addEventListener(`click`, (e) => {
+    const audio = document.querySelector(`#audio`);
+    const caption = document.querySelector(`#caption`);
+    const filename = getMusicFileName(audio, caption);
+    if(!filename) {
+      alert(`❌ filename is null`);
+      return;
+    }
+    audio.src = filename;
+    audio.play();
+  });
 });
 
