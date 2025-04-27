@@ -7,6 +7,25 @@
   <meta name="author" content="xgqfrms">
   <meta name="generator" content="VS code">
   <title>music player</title>
+  <style lang="css">
+    #btn {
+      background-color: #000000; /* Green */
+      border: none;
+      color: #00ff00;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 23px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+    #btn:hover {
+      background-color: #00ff00;
+      color: #000000;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -30,11 +49,12 @@
           <source src="./background-music/shake%20and%20sway.mp3" type="audio/mp3">
             Your browser does not support the  <code>audio</code> element.
         </audio>
+        <button id="btn">click to play</button>
       </figure>
     </article>
   </main>
   <footer>
-    <p>copyright&copy; xgqfrms 2025</p>
+    <p>copyright&copy; xgqfrms 2022</p>
   </footer>
   <script type="module" src="./app.js"></script>
 </body>
