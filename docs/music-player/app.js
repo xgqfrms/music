@@ -25,25 +25,37 @@
 
 const log = console.log;
 
-const MUSIC_PLAYER = `music-player/index.html`;
+// const DOMAIN = `${window.location.origin}`;
+// const DOMAIN = `https://music.xgqfrms.xyz`;
 const {
   origin: DOMAIN,
   search: query,
 }= window.location;
 
+const MUSIC_PLAYER = `music-player/index.html`;
 
-const getMusicFileName = (caption) => {
+const getMusicFileName = (audio, caption) => {
   const args = new URLSearchParams(query);
-  console.log(`args =`, args);
+  // console.log(`args.entries() =`, args.entries());
+  // console.log(`args =`, args);
+  for (const arg of args) {
+    console.log(`arg =`, arg);
+  }
   let filename = null;
-  console.log(`filename =`, filename);
   try {
     filename = args.get('q');
-    console.log(`filename =`, filename);
+    console.log(`✅ filename =`, filename);
     if(filename) {
       caption.innerText = filename;
-      console.log(`✅ auto play music success =`, filename);
-    }
+      audio.src = filename;
+      // fix local test
+      if(window.location.protocol === `http:` || window.location.hostname === `127.0.0.1`) {
+        audio.src = `https://music.xgqfrms.xyz/${filename}`;
+      }
+      audio.playbackRate = 1.0;
+      audio.play();
+        console.log(`✅ auto play music success =`, filename);
+      }
   } catch (err) {
     console.log(`❌ get music filename error =`, err);
   }
@@ -54,22 +66,24 @@ const getMusicFileName = (caption) => {
 document.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM fully loaded and parsed ✅");
   const btn = document.querySelector(`#btn`);
+  const audio = document.querySelector(`#audio`);
+  const caption = document.querySelector(`#caption`);
   // fix auto play limit
   btn.addEventListener(`click`, (e) => {
-    const audio = document.querySelector(`#audio`);
-    const caption = document.querySelector(`#caption`);
-    const filename = getMusicFileName(caption);
+    if(!audio.paused) {
+      audio.pause();
+      btn.innerText = `click to replay`;
+      return;
+    } else {
+      btn.innerText = `click to pause`;
+    }
+    const filename = getMusicFileName(audio, caption);
     if(!filename) {
       alert(`❌ filename is null`);
       return;
+    } else {
+      console.log(`✅ filename is`, filename);
     }
-    audio.src = filename;
-    // fix local test
-    if(window.location.protocol === `http:` || window.location.hostname === `127.0.0.1`) {
-      audio.src = `https://music.xgqfrms.xyz/${filename}`;
-    }
-    audio.playbackRate = 1.0;
-    audio.play();
   });
 });
 
