@@ -65,6 +65,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
       return;
     }
     audio.src = filename;
+    // local test
+    if(window.location.protocol === `http:` || window.location.hostname === `127.0.0.1`) {
+      audio.src = `https://music.xgqfrms.xyz/${filename}`;
+    }
+    audio.playbackRate = 1.0;
     audio.play();
   });
 });
