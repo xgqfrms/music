@@ -47,17 +47,15 @@ const getMusicFileName = (audio, caption) => {
     console.log(`✅ filename =`, filename);
     if(filename) {
       caption.innerText = filename;
-      audio.src = filename;
+      // audio.src = filename;
+      audio.src = `${DOMAIN}/${filename}`;
       // fix local test
       if(window.location.protocol === `http:` || window.location.hostname === `127.0.0.1`) {
         audio.src = `https://music.xgqfrms.xyz/${filename}`;
       }
       audio.playbackRate = 1.0;
-      // delay
-      setTimeout(() => {
-        audio.play();
-        console.log(`✅ auto play music success =`, filename);
-      }, 0);
+      audio.play();
+      console.log(`✅ auto play music success =`, filename);
     }
   } catch (err) {
     console.log(`❌ get music filename error =`, err);
