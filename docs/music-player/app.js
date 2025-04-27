@@ -37,7 +37,6 @@ const MUSIC_PLAYER = `music-player/index.html`;
 const getMusicFileName = (audio, caption) => {
   const args = new URLSearchParams(query);
   // console.log(`args.entries() =`, args.entries());
-  // console.log(`args =`, args);
   for (const arg of args) {
     console.log(`arg =`, arg);
   }
@@ -47,15 +46,18 @@ const getMusicFileName = (audio, caption) => {
     console.log(`✅ filename =`, filename);
     if(filename) {
       caption.innerText = filename;
-      // audio.src = filename;
+      // music cdn
       audio.src = `${DOMAIN}/${filename}`;
+      audio.download = `${DOMAIN}/${filename}`;
       // fix local test
       if(window.location.protocol === `http:` || window.location.hostname === `127.0.0.1`) {
         audio.src = `https://music.xgqfrms.xyz/${filename}`;
+        audio.download = `https://music.xgqfrms.xyz/${filename}`;
       }
       // https://music.xgqfrms.xyz/music-player/index.html?q=https://cdn.pixabay.com/audio/2025/04/21/audio_ed6f0ed574.mp3
       if(filename.includes(`https://`) || filename.includes(`http://`)) {
         audio.src = `${filename}`;
+        audio.download = `${filename}`;
       }
       audio.playbackRate = 1.0;
       audio.play();
@@ -66,6 +68,7 @@ const getMusicFileName = (audio, caption) => {
   }
   return filename;
 }
+
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
