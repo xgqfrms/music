@@ -5,8 +5,8 @@
 
 |music name|🎧 play|📝 edit|
 |--|--|--|
-|the-most-beautiful-expectation.mp3|[🎧 play](https://music.xgqfrms.xyz/the-most-beautiful-expectation/index.html)|[📝 edit](./the-most-beautiful-expectation)|
-|background-music|[🎧 play](https://music.xgqfrms.xyz/background-music/index.html)|[📝 edit](./background-music)|
+|the-most-beautiful-expectation.mp3|[🎧 play](https://music.xgqfrms.xyz/the-most-beautiful-expectation/index.html)|[📝 edit](https://github.com/xgqfrms/music/tree/main/docs/the-most-beautiful-expectation)|
+|background-music|[🎧 play](https://music.xgqfrms.xyz/background-music/index.html)|[📝 edit](https://github.com/xgqfrms/music/tree/main/docs/background-music)|
 |<span title="Pet Shop Boys - Go West">Go West</span>|[🎧 play](https://music.xgqfrms.xyz/music-player/index.html?q=background-music/Go-West.mp3)|[📝 edit](https://github.com/xgqfrms/music/tree/main/docs/background-music)|
 |freedom|[🎧 play](https://music.xgqfrms.xyz/music-player/index.html?q=background-music/freedom.mp3)|[📝 edit](https://github.com/xgqfrms/music/tree/main/docs/background-music)|
 |Stuttering|[🎧 play](https://music.xgqfrms.xyz/music-player/index.html?q=background-music/Stuttering.mp3)|[📝 edit](https://github.com/xgqfrms/music/tree/main/docs/background-music)|
