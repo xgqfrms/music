@@ -34,6 +34,9 @@ const {
 
 const MUSIC_PLAYER = `music-player/index.html`;
 
+// let AUDIO_RESOURCE_LOADED_FLAG = false;
+window.AUDIO_RESOURCE_LOADED_FLAG = false;
+
 const getMusicFileName = (audio, caption) => {
   const args = new URLSearchParams(query);
   // console.log(`args.entries() =`, args.entries());
@@ -59,6 +62,8 @@ const getMusicFileName = (audio, caption) => {
         audio.src = `${filename}`;
         audio.download = `${filename}`;
       }
+      // once flag
+      window.AUDIO_RESOURCE_LOADED_FLAG = true;
       audio.playbackRate = 1.0;
       audio.play();
       console.log(`✅ auto play music success =`, filename);
@@ -70,7 +75,6 @@ const getMusicFileName = (audio, caption) => {
 }
 
 
-
 document.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM fully loaded and parsed ✅");
   const btn = document.querySelector(`#btn`);
@@ -78,19 +82,27 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const caption = document.querySelector(`#caption`);
   // fix auto play limit
   btn.addEventListener(`click`, (e) => {
+    // once
+    if(!window.AUDIO_RESOURCE_LOADED_FLAG) {
+      const filename = getMusicFileName(audio, caption);
+      if(!filename) {
+        console.log(`❌ filename is null`);
+      } else {
+        console.log(`✅ filename is`, filename);
+      }
+    } else {
+      console.log(`✅ AUDIO_RESOURCE_LOADED_FLAG =`, window.AUDIO_RESOURCE_LOADED_FLAG);
+    }
     if(!audio.paused) {
       audio.pause();
       btn.innerText = `click to replay`;
-      return;
+      // return;
     } else {
+      audio.play();
       btn.innerText = `click to pause`;
-    }
-    const filename = getMusicFileName(audio, caption);
-    if(!filename) {
-      alert(`❌ filename is null`);
-      return;
-    } else {
-      console.log(`✅ filename is`, filename);
     }
   });
 });
+
+
+
