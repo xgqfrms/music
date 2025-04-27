@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="xgqfrms">
+  <meta name="generator" content="VS code">
+  <title>music player</title>
+</head>
+<body>
+  <header>
+    <h1>music player</h1>
+  </header>
+  <main>
+    <section>
+        <a href="https://music.xgqfrms.xyz/music-player/index.html">music-player</a>
+    </section>
+    <article>
+      <figure>
+        <figcaption id="caption">全斗焕小曲 / shake and sway.mp3</figcaption>
+        <audio
+          id="audio"
+          controls
+          autoplay
+          loop
+          controlslist="nodownload"
+          onloadstart="this.playbackRate = 1.5; this.volume = 0.5;"
+          src="./background-music/shake%20and%20sway.mp3">
+          <source src="./background-music/shake%20and%20sway.mp3" type="audio/mp3">
+            Your browser does not support the  <code>audio</code> element.
+        </audio>
+      </figure>
+    </article>
+  </main>
+  <footer>
+    <p>copyright&copy; xgqfrms 2025</p>
+  </footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
