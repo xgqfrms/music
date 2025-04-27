@@ -53,9 +53,12 @@ const getMusicFileName = (audio, caption) => {
         audio.src = `https://music.xgqfrms.xyz/${filename}`;
       }
       audio.playbackRate = 1.0;
-      audio.play();
+      // delay
+      setTimeout(() => {
+        audio.play();
         console.log(`✅ auto play music success =`, filename);
-      }
+      }, 0);
+    }
   } catch (err) {
     console.log(`❌ get music filename error =`, err);
   }
@@ -86,4 +89,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   });
 });
-
