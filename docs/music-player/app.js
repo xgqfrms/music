@@ -17,6 +17,8 @@
  * @example
  * @link https://music.xgqfrms.xyz/music-player/index.html
  * @link https://music.xgqfrms.xyz/music-player/index.html?q=background-music/Go-West.mp3
+ * @link https://music.xgqfrms.xyz/music-player/index.html?q=https://cdn.pixabay.com/audio/2025/04/21/audio_ed6f0ed574.mp3
+ * @link http://127.0.0.1:5500/2025-tesla-raspberry-pi3b/music-palyer/index.html?q=https://cdn.pixabay.com/audio/2025/04/21/audio_ed6f0ed574.mp3
  * @solutions
  *
  * @best_solutions
@@ -51,16 +53,16 @@ const getMusicFileName = (audio, caption) => {
       caption.innerText = filename;
       // music cdn
       audio.src = `${DOMAIN}/${filename}`;
-      audio.download = `${DOMAIN}/${filename}`;
+      audio.setAttribute(`download`, `${DOMAIN}/${filename}`);
       // fix local test
       if(window.location.protocol === `http:` || window.location.hostname === `127.0.0.1`) {
         audio.src = `https://music.xgqfrms.xyz/${filename}`;
-        audio.download = `https://music.xgqfrms.xyz/${filename}`;
+        audio.setAttribute(`download`, `https://music.xgqfrms.xyz/${filename}`);
       }
       // https://music.xgqfrms.xyz/music-player/index.html?q=https://cdn.pixabay.com/audio/2025/04/21/audio_ed6f0ed574.mp3
       if(filename.includes(`https://`) || filename.includes(`http://`)) {
         audio.src = `${filename}`;
-        audio.download = `${filename}`;
+        audio.setAttribute(`download`, `${filename}`);
       }
       // once flag
       window.AUDIO_RESOURCE_LOADED_FLAG = true;
@@ -103,6 +105,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   });
 });
-
 
 
