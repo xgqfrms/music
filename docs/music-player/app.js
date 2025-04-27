@@ -31,24 +31,23 @@ const {
   search: query,
 }= window.location;
 
-const getMusicFileName = () => {
+
+const getMusicFileName = (caption) => {
   const args = new URLSearchParams(query);
   console.log(`args =`, args);
+  let filename = null;
+  console.log(`filename =`, filename);
   try {
-    const filename = args.get('q');
+    filename = args.get('q');
     console.log(`filename =`, filename);
     if(filename) {
-      // auto play music
-      const caption = document.querySelector(`#caption`);
       caption.innerText = filename;
-      const audio = document.querySelector(`#audio`);
-      audio.src = filename;
-      audio.play();
       console.log(`✅ auto play music success =`, filename);
     }
   } catch (err) {
-    console.log(`❌ get music filename error =`, err)
+    console.log(`❌ get music filename error =`, err);
   }
+  return filename;
 }
 
 
@@ -59,13 +58,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
   btn.addEventListener(`click`, (e) => {
     const audio = document.querySelector(`#audio`);
     const caption = document.querySelector(`#caption`);
-    const filename = getMusicFileName(audio, caption);
+    const filename = getMusicFileName(caption);
     if(!filename) {
       alert(`❌ filename is null`);
       return;
     }
     audio.src = filename;
-    // local test
+    // fix local test
     if(window.location.protocol === `http:` || window.location.hostname === `127.0.0.1`) {
       audio.src = `https://music.xgqfrms.xyz/${filename}`;
     }
