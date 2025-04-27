@@ -53,6 +53,10 @@ const getMusicFileName = (audio, caption) => {
       if(window.location.protocol === `http:` || window.location.hostname === `127.0.0.1`) {
         audio.src = `https://music.xgqfrms.xyz/${filename}`;
       }
+      // https://music.xgqfrms.xyz/music-player/index.html?q=https://cdn.pixabay.com/audio/2025/04/21/audio_ed6f0ed574.mp3
+      if(filename.includes(`https://`) || filename.includes(`http://`)) {
+        audio.src = `${filename}`;
+      }
       audio.playbackRate = 1.0;
       audio.play();
       console.log(`✅ auto play music success =`, filename);
