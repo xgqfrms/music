@@ -94,16 +94,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
       }
     } else {
       console.log(`✅ AUDIO_RESOURCE_LOADED_FLAG =`, window.AUDIO_RESOURCE_LOADED_FLAG);
-    }
-    if(!audio.paused) {
-      audio.pause();
-      btn.innerText = `click to replay`;
-      // return;
-    } else {
-      audio.play();
-      btn.innerText = `click to pause`;
+      if(!audio.paused) {
+        audio.pause();
+        btn.innerText = `click to replay`;
+        // return;
+      } else {
+        audio.play();
+        btn.innerText = `click to pause`;
+      }
     }
   });
 });
-
 
