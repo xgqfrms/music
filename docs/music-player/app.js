@@ -89,6 +89,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       const filename = getMusicFileName(audio, caption);
       if(!filename) {
         console.log(`❌ filename is null`);
+        alert(`❌ filename is null`);
+        return;
       } else {
         console.log(`✅ filename is`, filename);
       }
