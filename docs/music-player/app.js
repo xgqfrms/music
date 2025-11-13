@@ -29,6 +29,7 @@ const log = console.log;
 
 // const DOMAIN = `${window.location.origin}`;
 // const DOMAIN = `https://music.xgqfrms.xyz`;
+const DOMAIN = `https://music.777737777.xyz`;
 const {
   origin: DOMAIN,
   search: query,
@@ -56,8 +57,8 @@ const getMusicFileName = (audio, caption) => {
       audio.setAttribute(`download`, `${DOMAIN}/${filename}`);
       // fix local test
       if(window.location.protocol === `http:` || window.location.hostname === `127.0.0.1`) {
-        audio.src = `https://music.xgqfrms.xyz/${filename}`;
-        audio.setAttribute(`download`, `https://music.xgqfrms.xyz/${filename}`);
+        audio.src = `${DOMAIN}/${filename}`;
+        audio.setAttribute(`download`, `${DOMAIN}/${filename}`);
       }
       // https://music.xgqfrms.xyz/music-player/index.html?q=https://cdn.pixabay.com/audio/2025/04/21/audio_ed6f0ed574.mp3
       if(filename.includes(`https://`) || filename.includes(`http://`)) {
