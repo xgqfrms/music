@@ -6,7 +6,7 @@
  * @license MIT
  * @copyright xgqfrms
  * @created 2025-04-27
- * @modified
+ * @modified 2025-12-29
  *
  * @description
  * @description
@@ -15,9 +15,9 @@
  * @space_complexity O(n)
  * @augments
  * @example
- * @link https://music.xgqfrms.xyz/music-player/index.html
- * @link https://music.xgqfrms.xyz/music-player/index.html?q=background-music/Go-West.mp3
- * @link https://music.xgqfrms.xyz/music-player/index.html?q=https://cdn.pixabay.com/audio/2025/04/21/audio_ed6f0ed574.mp3
+ * @link https://music.777737777.xyz/music-player/index.html
+ * @link https://music.777737777.xyz/music-player/index.html?q=background-music/Go-West.mp3
+ * @link https://music.777737777.xyz/music-player/index.html?q=https://cdn.pixabay.com/audio/2025/04/21/audio_ed6f0ed574.mp3
  * @link http://127.0.0.1:5500/2025-tesla-raspberry-pi3b/music-palyer/index.html?q=https://cdn.pixabay.com/audio/2025/04/21/audio_ed6f0ed574.mp3
  * @link https://music.777737777.xyz/music-player/index.html?q=file:///Users/xgqfrms-mm/Music/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/John%20The%20Whistler%20-%20Wild%20Wild%20Web.mp3
  * @solutions
@@ -29,7 +29,7 @@
 const log = console.log;
 
 // const DOMAIN = `${window.location.origin}`;
-// const DOMAIN = `https://music.xgqfrms.xyz`;
+// const DOMAIN = `https://music.777737777.xyz`;
 const {
   origin: DOMAIN,
   search: query,
@@ -116,10 +116,10 @@ const getMusicFileName = (audio, caption) => {
       audio.setAttribute(`download`, `${DOMAIN}/${filename}`);
       // fix local test
       if(window.location.protocol === `http:` || window.location.hostname === `127.0.0.1`) {
-        audio.src = `https://music.xgqfrms.xyz/${filename}`;
-        audio.setAttribute(`download`, `https://music.xgqfrms.xyz/${filename}`);
+        audio.src = `https://music.777737777.xyz/${filename}`;
+        audio.setAttribute(`download`, `https://music.777737777.xyz/${filename}`);
       }
-      // https://music.xgqfrms.xyz/music-player/index.html?q=https://cdn.pixabay.com/audio/2025/04/21/audio_ed6f0ed574.mp3
+      // https://music.777737777.xyz/music-player/index.html?q=https://cdn.pixabay.com/audio/2025/04/21/audio_ed6f0ed574.mp3
       if(filename.includes(`https://`) || filename.includes(`http://`)) {
         audio.src = `${filename}`;
         audio.setAttribute(`download`, `${filename}`);
@@ -205,11 +205,11 @@ When a file is chosen using an <input type="file">, the real path to the source 
 
 {
   "ancestorOrigins": {},
-  "href": "https://music.xgqfrms.xyz/background-music/index.html?q=background-music/Go-West.mp3",
-  "origin": "https://music.xgqfrms.xyz",
+  "href": "https://music.777737777.xyz/background-music/index.html?q=background-music/Go-West.mp3",
+  "origin": "https://music.777737777.xyz",
   "protocol": "https:",
-  "host": "music.xgqfrms.xyz",
-  "hostname": "music.xgqfrms.xyz",
+  "host": "music.777737777.xyz",
+  "hostname": "music.777737777.xyz",
   "port": "",
   "pathname": "/background-music/index.html",
   "search": "?q=background-music/Go-West.mp3",
