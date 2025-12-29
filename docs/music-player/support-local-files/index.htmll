@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="xgqfrms">
+  <meta name="generator" content="VS code">
+  <title>music player</title>
+  <style lang="css">
+    #btn {
+      background-color: #000000; /* Green */
+      border: none;
+      color: #00ff00;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 23px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+    #btn:hover {
+      background-color: #00ff00;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>music player</h1>
+  </header>
+  <main>
+    <section>
+        <a href="https://music.777737777.xyz/music-player/index.html">music-player</a>
+    </section>
+    <article>
+      <figure>
+        <figcaption id="caption">全斗焕小曲 / shake and sway.mp3</figcaption>
+        <!-- TODOS: UI, controls -->
+        <!-- https://googlechrome.github.io/samples/media/controlslist.html -->
+        <!-- controlslist="nodownload" -->
+        <audio
+          crossorigin="anonymous"
+          id="audio"
+          controls
+          autoplay
+          loop
+          onloadstart="this.playbackRate = 1.5; this.volume = 0.5;"
+          download="https://music.777737777.xyz/background-music/shake%20and%20sway.mp3"
+          src="https://music.777737777.xyz/background-music/shake%20and%20sway.mp3">
+          <source id="source" src="https://music.777737777.xyz/background-music/shake%20and%20sway.mp3" type="audio/mp3">
+          Your browser does not support the  <code>audio</code> element.
+        </audio>
+        <button id="btn">click to play</button>
+      </figure>
+    </article>
+    <section>
+      <input type="file" name="music_input" id="music_input" accept="audio/*" />
+      <input type="file" name="music_inputs" id="music_inputs" accept="audio/*" multiple/>
+      ???
+    </section>
+  </main>
+  <footer>
+    <p>copyright&copy; xgqfrms 2025</p>
+  </footer>
+  <script type="module" src="./app.js" crossorigin="anonymous"></script>
+</body>
+</html>
