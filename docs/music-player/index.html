@@ -25,6 +25,18 @@
       background-color: #00ff00;
       color: #000000;
     }
+    /* 只想修改按钮上的文字样式，现代浏览器支持 ::file-selector-button。但请注意，它不能修改文字内容 */
+    input[type="file"]::file-selector-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="file"]::file-selector-button:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
 <body>
@@ -34,6 +46,15 @@
   <main>
     <section>
         <a href="https://music.777737777.xyz/music-player/index.html">music-player</a>
+    </section>
+    <section>
+      <!-- 隐藏原生 input -->
+      <input type="file" id="file-upload" style="display: none;">
+      <!-- 自定义显示的内容 -->
+      <label for="file-upload" class="custom-file-upload">
+        <span class="btn-text">点击上传本地文件</span>
+        <span id="file-name">未选择任何本地文件</span>
+      </label>
     </section>
     <article>
       <figure>
