@@ -41,7 +41,8 @@ const MUSIC_PLAYER = `music-player/index.html`;
 window.AUDIO_RESOURCE_LOADED_FLAG = false;
 
 const getMusicFileName = (audio, caption) => {
-  const args = new URLSearchParams(query);
+  const args = new URLSearchParams(window.location.query);
+  // const args = new URLSearchParams(query);
   // console.log(`args.entries() =`, args.entries());
   for (const arg of args) {
     console.log(`arg =`, arg);
