@@ -25,65 +25,41 @@
       background-color: #00ff00;
       color: #000000;
     }
-    /* 只想修改按钮上的文字样式，现代浏览器支持 ::file-selector-button。但请注意，它不能修改文字内容 */
-    input[type="file"]::file-selector-button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    input[type="file"]::file-selector-button:hover {
-      background-color: #45a049;
-    }
+
     /* 1. 隐藏原生 input */
-#file-upload {
-  display: none;
-}
-
-/* 2. 定义 label 容器样式 */
-.custom-file-upload {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  font-family: sans-serif;
-}
-
-/* 3. 定义“按钮”部分的样式 */
-.custom-file-upload .btn-text {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #007bff; /* 蓝色背景 */
-  color: white;
-  border-radius: 4px;
-  font-size: 14px;
-  transition: background-color 0.2s ease;
-}
-
-/* 鼠标悬停效果 */
-.custom-file-upload .btn-text:hover {
-  background-color: #0056b3;
-}
-
-/* 4. 定义“文件名”展示部分的样式 */
-#file-name {
-  font-size: 14px;
-  color: #666;
-}
+    #file-upload {
+      display: none;
+    }
     
-.custom-file-upload .btn-text:active {
-  background-color: #004085;
-}
-
-#file-name {
-  max-width: 200px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  vertical-align: middle;
-}
+    /* 2. 定义 label 容器样式 */
+    .custom-file-upload {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-family: sans-serif;
+    }
+    
+    /* 3. 定义“按钮”部分的样式 */
+    .custom-file-upload .btn-text {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #007bff; /* 蓝色背景 */
+      color: white;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background-color 0.2s ease;
+    }
+    
+    /* 鼠标悬停效果 */
+    .custom-file-upload .btn-text:hover {
+      background-color: #0056b3;
+    }
+    
+    /* 4. 定义“文件名”展示部分的样式 */
+    #file-name {
+      display:  none;
+    }
   </style>
 </head>
 <body>
