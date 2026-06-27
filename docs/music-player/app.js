@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const input = document.querySelector('input[type="file"]');
   
   input.addEventListener('change', (e) => {
+    console.log(`e =`, e);
     const file = e.target.files[0];
     // URL blob
     const url = URL.createObjectURL(file);
@@ -100,8 +101,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
     audio.play();
     
     caption.innerText = file.name || `❓`;
-    // const fileName = this.files[0] ? this.files[0].name : '未选择任何本地文件';
-    // document.getElementById('file-name').textContent = fileName;
+    // 1. 创建 params 对象
+    const params = new URLSearchParams(window.location.search);
+    // 2. 修改参数
+    params.set('q', file.name);
+    // 3. 构建新的 URL 字符串
+    const newUrl = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
+    // 4. 使用 pushState 更新 URL， 不刷新页面
+    // 第一个参数是状态对象，第二个是标题（通常传空字符串），第三个是新的 URL
+    window.history.pushState({}, '', newUrl);
   });
   // fix auto play limit
   btn.addEventListener(`click`, (e) => {
