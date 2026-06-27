@@ -65,6 +65,12 @@ const getMusicFileName = (audio, caption) => {
         audio.src = `${filename}`;
         audio.setAttribute(`download`, `${filename}`);
       }
+      // ⚠️ 跨域安全限制：出于安全考虑，运行在 http:// 或 https:// 协议下的网页禁止直接通过 file:// 协议访问用户本地文件系统。这是为了防止恶意网站读取你电脑上的私密数据。
+      // if(filename.includes(`file://`)) {
+      //   audio.src = `${filename}`;
+      //   audio.setAttribute(`download`, `${filename}`);
+      // }
+      // ✅ 如果你需要处理用户本地的任意文件，应使用 <input type="file">，通过 JavaScript 获取 File 对象并生成临时 URL
       // once flag
       window.AUDIO_RESOURCE_LOADED_FLAG = true;
       audio.playbackRate = 1.0;
@@ -83,6 +89,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const btn = document.querySelector(`#btn`);
   const audio = document.querySelector(`#audio`);
   const caption = document.querySelector(`#caption`);
+  // support local file
+  const input = document.querySelector('input[type="file"]');
+  
+  input.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    // URL blob
+    const url = URL.createObjectURL(file);
+    audio.src = url;
+    audio.play();
+  });
   // fix auto play limit
   btn.addEventListener(`click`, (e) => {
     // once
