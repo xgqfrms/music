@@ -98,6 +98,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const url = URL.createObjectURL(file);
     audio.src = url;
     audio.play();
+    
+    caption.innerText = file.name || `❓`;
+    // const fileName = this.files[0] ? this.files[0].name : '未选择任何本地文件';
+    // document.getElementById('file-name').textContent = fileName;
   });
   // fix auto play limit
   btn.addEventListener(`click`, (e) => {
